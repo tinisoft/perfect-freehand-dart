@@ -2,21 +2,21 @@ import 'dart:math';
 import 'dart:ui' show Offset, lerpDouble;
 
 class PointVector extends Offset {
-  const PointVector(
+  PointVector(
     this.x,
     this.y, [
     this.pressure,
   ]) : super(x, y);
 
   /// Identical to [dx]
-  final double x;
+  double x;
 
   /// Identical to [dy]
-  final double y;
+  double y;
 
   /// The pressure of the point, between 0 and 1,
   /// or null if the pressure is unknown.
-  final double? pressure;
+  double? pressure;
 
   /// Deprecated non-nullable pressure value.
   ///
@@ -25,8 +25,8 @@ class PointVector extends Offset {
   @Deprecated('Use pressure instead')
   double get p => pressure ?? 0.5;
 
-  static const zero = PointVector(0, 0);
-  static const one = PointVector(1, 1);
+  static var zero = PointVector(0, 0);
+  static var one = PointVector(1, 1);
 
   PointVector.fromOffset({
     required Offset offset,
